@@ -1,0 +1,29 @@
+import java.util.*'
+class Solution
+{
+    private static int maxConsecutiveOnes(int N)
+    {
+        // Initialize result
+        int count = 0;
+ 
+        // Count the number of iterations to
+        // reach x = 0.
+        while (N!=0)
+        {
+           
+            N = (N & (N << 1));
+ 
+            count++;
+        }
+ 
+        return count;
+    }
+ 
+    // Driver code
+    public static void main(String strings[])
+    {
+Scanner s=new Scanner(System.in);
+    int n=s.nextInt();
+System.out.println(maxConsecutiveOnes(n));
+    }
+}
