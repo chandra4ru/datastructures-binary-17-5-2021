@@ -1,0 +1,35 @@
+import java.util.*;
+class Solution {
+    // Returns modified number with
+    // all even bits 0.
+    static int changeEvenBits(int n)
+    {
+        // To store sum of bits
+        // at even positions.
+        int to_subtract = 0;
+ 
+        // To store bits to shift
+        int m = 0;
+ 
+        // One by one put all even
+        // bits to end
+        for (int x = n; x > 0; x >>= 2) {
+            // If current last bit
+            // is set, add it to ans
+            if ((x & 1) > 0)
+                to_subtract += (1 << m);
+ 
+            // Next shift position
+            m += 2;
+        }
+ 
+        return n - to_subtract;
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+    int n=s.nextInt();
+        System.out.println(changeEvenBits(n));
+    }
