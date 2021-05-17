@@ -1,0 +1,19 @@
+class Solution{
+    static int setKthBit(int N,int K){
+        // code here
+          return ((1 << K) | N);
+       
+    }
+
+
+ 
+// Driver code
+public static void main(String arg[])
+{
+    Scanner s=new Scanner(System.in);
+    int n=s.nextInt();
+    int k=s.nextInt();
+        System.out.print("Kth bit set number = " +
+                             setKthBit(n, k));
+}
+}
